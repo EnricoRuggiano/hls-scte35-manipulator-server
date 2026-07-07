@@ -1,5 +1,5 @@
-apiVersion: apps/v1
 kind: Deployment
+apiVersion: apps/v1
 metadata:
   name: hls-scte35-manipulator-server
 spec:
@@ -15,5 +15,8 @@ spec:
       containers:
       - name: hls-scte35-manipulator-server
         image: lalalaciccio/hls-scte35-manipulator-server:latest
-        command: hls-scte35-manipulator-server
-        args: ["--origin-base-url", "nginx:5000", "--profile", "profiles/profile.json", "--host", "0.0.0.0", "--port", "4999"]
+        ports:
+          - containerPort: 4999
+            protocol: TCP        
+        command: ["hls-scte35-manipulator-server"]
+        args: ["--origin-base-url", "nginx:5000", "--profile", "profiles/profile-descriptor-ads-filter.json", "--host", "0.0.0.0", "--port", "4999"]
