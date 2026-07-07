@@ -62,3 +62,6 @@ docker-delete:
 
 docker-publish:
 	docker push $(IMAGE_NAME)
+
+deploy:
+	kustomize build kubernetes-base/

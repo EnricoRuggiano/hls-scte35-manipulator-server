@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: ser-hls-scte35-manipulator-server
+spec:
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 4999
+  selector:
+    app: hls-scte35-manipulator-server
+  type: ClusterIP
