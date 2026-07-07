@@ -5,10 +5,10 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /src
 
-COPY pyproject.toml README.md requirements.txt ./
+COPY pyproject.toml requirements.txt ./
 COPY hls_scte35_manipulator_server ./hls_scte35_manipulator_server
 
-RUN python -m pip install --no-cache-dir --upgrade pip build \
+RUN    python -m pip install --no-cache-dir --upgrade pip build \
     && python -m build --wheel --outdir /dist
 
 FROM python:3.12-alpine
@@ -21,7 +21,7 @@ WORKDIR /app
 RUN addgroup -S app && adduser -S app -G app
 
 COPY --from=builder /dist/*.whl /tmp/
-RUN python -m pip install --no-cache-dir --upgrade pip \
+RUN    python -m pip install --no-cache-dir --upgrade pip \
     && python -m pip install --no-cache-dir /tmp/*.whl \
     && rm -f /tmp/*.whl
 
