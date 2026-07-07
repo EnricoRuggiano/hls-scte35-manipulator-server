@@ -10,7 +10,7 @@ CONTAINER_NAME := hls-scte35-manipulator-server
 
 ORIGIN_BASE_URL ?= http://host.docker.internal:5000
 
-.PHONY: build install install-dev tests clean start docker-build docker-start docker-stop docker-delete
+.PHONY: build install install-dev tests clean start docker-build docker-start docker-stop docker-delete docker-publish
 
 build:
 	$(PIP) install --upgrade build
