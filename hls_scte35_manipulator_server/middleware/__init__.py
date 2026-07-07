@@ -1,0 +1,1 @@
+from .middleware import rewrite_manifest_if_needed

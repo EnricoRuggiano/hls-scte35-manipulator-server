@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hls-scte35-manipulator-server"
+version = "0.1.0"
+description = "HLS manifest proxy that manipulates SCTE-35 tags depending on specific json profile."
+readme = "README.md"
+requires-python = ">=3.9.7"
+dynamic = ["dependencies", "optional-dependencies"]
+
+[tool.setuptools.dynamic]
+dependencies = { file = [ "requirements.txt" ] }
+optional-dependencies.dev = { file = [ "requirements-dev.txt" ] }
+
+[tool.setuptools.package-data]
+profiles = ["*.json"]
+
+[project.scripts]
+hls-scte35-manipulator-server = "hls_scte35_manipulator_server.hls_scte35_manipulator_server:main"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["hls_scte35_manipulator_server*"]

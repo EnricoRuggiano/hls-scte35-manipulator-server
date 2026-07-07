@@ -1,0 +1,25 @@
+{
+  "filters": [],
+  "overwrites": [
+    {
+      "op": "update",
+      "path": "descriptors[].segmentation_type_id",
+      "where": {
+        "path": "segmentation_type_id",
+        "op": "eq",
+        "value": 48
+      },
+      "value": 34
+    },
+    {
+      "op": "update",
+      "path": "descriptors[].segmentation_type_id",
+      "where": {
+        "path": "segmentation_type_id",
+        "op": "eq",
+        "value": 49
+      },
+      "value": 35
+    }
+  ]
+}

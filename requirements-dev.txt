@@ -1,0 +1,5 @@
+pytest==7.4.3
+pytest-cov==2.11.1
+typing_extensions==4.16.0
+pytest-html==4.2.0
+pytest-ordering==0.6

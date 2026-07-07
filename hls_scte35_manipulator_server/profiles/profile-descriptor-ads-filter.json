@@ -1,0 +1,31 @@
+{
+  "filters": [
+    {
+      "match": {
+        "path": "command.command_type",
+        "op": "eq",
+        "value": 5
+      }
+    }
+  ],
+  "overwrites": [
+    {
+      "op": "remove",
+      "path": "descriptors[]",
+      "where": {
+        "all": [
+          {
+            "path": "segmentation_type_id",
+            "op": "ne",
+            "value": 34
+          },
+          {
+            "path": "segmentation_type_id",
+            "op": "ne",
+            "value": 35
+          }
+        ]
+      }
+    }
+  ]
+}

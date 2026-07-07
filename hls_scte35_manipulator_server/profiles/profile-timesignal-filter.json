@@ -1,0 +1,12 @@
+{
+  "filters": [
+    {
+      "match": {
+        "path": "command.command_type",
+        "op": "eq",
+        "value": 6
+      }
+    }
+  ],
+  "overwrites": []
+}
